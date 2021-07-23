@@ -1,6 +1,6 @@
 <template>
   <div class="content_all">
-    <div class="banner"></div>
+    <div class="banner"><img src="../../assets/img/home/banner.png" alt="" /></div>
     <div class="wallet">
       <div v-if="walletShow === true" class="wallet_center">
         <div class="address">ADDRESS：{{ walletAddress.address }}</div>
@@ -95,9 +95,13 @@ export default {
 <style scoped lang="scss">
 .content_all {
   .banner {
-    height: 864px;
-    background: url(../../assets/img/home/banner.png) no-repeat top center;
-    background-size: cover;
+    width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 100px 0 20px 0;
+    text-align: center;
   }
   .wallet {
     height: 114px;
@@ -195,8 +199,7 @@ export default {
     .why_con {
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      padding: 0 166px;
+      justify-content: space-around;
       .why_li {
         display: flex;
         flex-direction: column;
