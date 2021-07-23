@@ -11,7 +11,7 @@
       </div>
       <div v-if="walletShow === false" class="wallet_center">
         <div class="address">No Wallet detected. Please download and open the latest version of Wallet extention.</div>
-        <div class="button btn" @click="urlHiddle(1)">Loacal download</div>
+        <div class="button btn" @click="urlHiddle(1)">Local download</div>
         <div class="button btn" @click="urlHiddle(2)">Chrome Web Store</div>
       </div>
     </div>
