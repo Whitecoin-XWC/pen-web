@@ -2,11 +2,16 @@ import env from './env'
 
 export default {
   head: {
-    title: 'Tokenswap',
+    title: 'Penguin',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no' },
-      { hid: 'description', name: 'description', content: 'Tokenswap - DEX Based on Whitecoin Crosschain Ecology' },
+      {
+        hid: 'description',
+        name: 'description',
+        content:
+          'Penguin is a p2p decentralized storage network established on Whitecoin, which allows pool storage, bandwidth and hashrate resources to support its application.',
+      },
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
     script: [
