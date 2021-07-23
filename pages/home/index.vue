@@ -96,7 +96,7 @@ export default {
 .content_all {
   .banner {
     height: 864px;
-    background: url(../../assets/img/home/banner.png) no-repeat;
+    background: url(../../assets/img/home/banner.png) no-repeat top center;
     background-size: cover;
   }
   .wallet {
