@@ -176,6 +176,9 @@ export default {
           color: #464d59;
           margin-bottom: 15px;
         }
+        p:last-child {
+          line-height: 24px;
+        }
       }
       .homea_right {
         width: 412px;

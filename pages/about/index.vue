@@ -14,8 +14,8 @@
         <div class="name_li">
           <div class="name_img name01"></div>
           <div class="name_text left">
-            <p>CEO</p>
             <p>Danil Chunyukin</p>
+            <p>CEO</p>
             <p>
               Over ten years of management and four years of crypto and blockchain spheres experience.<br />
               Used to be the Chief Project Manager of UNISLURM.<br />
@@ -27,8 +27,8 @@
         <div class="name_li flex">
           <div class="name_img name02"></div>
           <div class="name_text right">
-            <p>CTO</p>
             <p>Aleksandr Aleksandruk</p>
+            <p>CTO</p>
             <p>
               CTO in Penguin storage project ,technical consultant in Whitecoin project Used to launch 3 successful projects such as crypto acquiring in Fintech
               and Blockchain at the venture fund.<br />
@@ -41,7 +41,7 @@
     </div>
     <div class="radmap">
       <div class="radmap_title">Penguin Roadmap</div>
-      <div class="radmap_img"><img src="../../assets/img/about/roadmap.png" alt="" /></div>
+      <div class="radmap_img"><img src="../../assets/img/about/roadmap.png" alt="" width="100%" /></div>
     </div>
   </div>
 </template>
@@ -110,12 +110,17 @@ export default {}
             font-size: 12px;
             font-weight: 400;
             color: rgba(70, 77, 89, 0.9);
-            &:first-child,
-            &:nth-child(2) {
+            line-height: 20px;
+            &:first-child {
               font-size: 18px;
               font-weight: 500;
               color: #464d59;
-              margin-bottom: 5px;
+              margin-bottom: 8px;
+            }
+            &:nth-child(2) {
+              font-size: 18px;
+              color: #464d59;
+              margin-bottom: 8px;
             }
           }
           &.left {

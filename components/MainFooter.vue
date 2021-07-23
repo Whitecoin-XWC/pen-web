@@ -89,7 +89,6 @@ export default {
           p,
           .liaxi {
             font-size: 14px;
-            font-weight: 500;
             color: rgba(255, 255, 255, 0.4);
             padding: 7px 0;
             cursor: pointer;
@@ -127,7 +126,6 @@ export default {
           }
           p:first-child {
             font-size: 20px;
-            font-weight: 600;
             color: #ffffff;
             cursor: text;
           }
