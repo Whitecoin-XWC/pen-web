@@ -83,9 +83,9 @@ export default {
   methods: {
     urlHiddle(index) {
       if (index === 1) {
-        location.open('https://xwcwebwallet.oss-cn-hongkong.aliyuncs.com/xwcWebWallet.zip')
+        window.open('https://xwcwebwallet.oss-cn-hongkong.aliyuncs.com/xwcWebWallet.zip')
       } else if (index === 2) {
-        location.open('https://chrome.google.com/webstore/detail/xwcextwallet/ohofidejidplafebkaphkkjpnajednjn')
+        window.open('https://chrome.google.com/webstore/detail/xwcextwallet/ohofidejidplafebkaphkkjpnajednjn')
       }
     },
   },
