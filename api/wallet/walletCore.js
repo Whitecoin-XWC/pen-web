@@ -44,24 +44,22 @@ export default class Wallet {
                     walletAddress.pubKey = pubKey
                     walletAddress.pubKeyString = pubKeyString
                     if (address) {
-                      this.nodeClient.afterInited().then(() => {
-                        this.balanceOf(ContractAddress.NFTAddress(), walletAddress.address).then(
-                          () => {
-                            const payload = {
-                              isWalletInited: true,
-                              walletAddress,
-                            }
-                            resolve(Tools.doResultData('0', payload, '', '连接钱包'))
-                          },
-                          () => {
-                            const payload = {
-                              isWalletInited: false,
-                              walletAddress: null,
-                            }
-                            resolve(Tools.doResultData('6', payload, '钱包连接异常', '连接钱包'))
-                          },
-                        )
-                      })
+                      this.nodeClient.afterInited().then(
+                        () => {
+                          const payload = {
+                            isWalletInited: true,
+                            walletAddress,
+                          }
+                          resolve(Tools.doResultData('0', payload, '', '连接钱包'))
+                        },
+                        () => {
+                          const payload = {
+                            isWalletInited: false,
+                            walletAddress: null,
+                          }
+                          resolve(Tools.doResultData('6', payload, '钱包连接异常', '连接钱包'))
+                        },
+                      )
                     } else {
                       const payload = {
                         isWalletInited: false,
