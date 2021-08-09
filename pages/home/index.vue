@@ -1,20 +1,7 @@
 <template>
   <div class="content_all">
     <div class="banner"><img src="../../assets/img/home/banner.png" alt="" /></div>
-    <div class="wallet">
-      <div v-if="walletShow === true" class="wallet_center">
-        <div class="address">ADDRESS：{{ walletAddress.address }}</div>
-        <div class="hold">
-          HOLD：<span>{{ hold }}</span>
-        </div>
-        <div :class="['button', hold === 0 ? 'disabled' : '']">Receive income</div>
-      </div>
-      <div v-if="walletShow === false" class="wallet_center">
-        <div class="address">No Wallet detected. Please download and open the latest version of Wallet extention.</div>
-        <div class="button btn" @click="urlHiddle(1)">Local download</div>
-        <div class="button btn" @click="urlHiddle(2)">Chrome Web Store</div>
-      </div>
-    </div>
+    <Addr />
     <div class="home_about">
       <div class="homea_con">
         <div class="homea_left">
@@ -57,38 +44,9 @@
 
 <script>
 export default {
-  data() {
-    return {
-      walletShow: false,
-      walletAddress: null,
-      hold: 0,
-    }
-  },
-  mounted() {
-    // 是否连接钱包
-    if (this.$wallet.checkInstalled()) {
-      // 连接初始化
-      this.$wallet.connectWallet().then((res) => {
-        if (res.code === '0') {
-          this.walletShow = true
-          this.walletAddress = res.data.walletAddress
-        } else {
-          this.walletShow = false
-        }
-      })
-    } else {
-      this.walletShow = false
-    }
-  },
-  methods: {
-    urlHiddle(index) {
-      if (index === 1) {
-        window.open('https://xwcwebwallet.oss-cn-hongkong.aliyuncs.com/xwcWebWallet.zip')
-      } else if (index === 2) {
-        window.open('https://chrome.google.com/webstore/detail/xwcextwallet/ohofidejidplafebkaphkkjpnajednjn')
-      }
-    },
-  },
+  data() {},
+  mounted() {},
+  methods: {},
 }
 </script>
 
@@ -102,59 +60,6 @@ export default {
     justify-content: center;
     padding: 100px 0 20px 0;
     text-align: center;
-  }
-  .wallet {
-    height: 114px;
-    background: #f7d88b;
-    display: flex;
-    align-items: center;
-    .wallet_center {
-      width: 1200px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      .address,
-      .hold {
-        font-size: 14px;
-        font-weight: 500;
-        color: #464d59;
-        margin-right: 47px;
-        span {
-          font-size: 20px;
-          font-weight: 600;
-          color: #464d59;
-        }
-      }
-      .button {
-        background: #464d59;
-        width: 130px;
-        line-height: 34px;
-        border-radius: 6px;
-        color: #ffffff;
-        font-size: 14px;
-        text-align: center;
-        cursor: pointer;
-        &.btn {
-          border: 1px solid #464d59;
-          background: transparent;
-          color: #464d59;
-          &:last-child {
-            margin-left: 47px;
-          }
-        }
-        &:hover {
-          color: #9485ff;
-          border: 1px solid #9485ff;
-        }
-        &.disabled {
-          cursor: no-drop;
-          background: #969696;
-          border: 1px solid #969696;
-          color: #ffffff;
-        }
-      }
-    }
   }
   .home_about {
     background: #f9f9f9;
