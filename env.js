@@ -2,23 +2,19 @@ module.exports = {
   dev: {
     MODE: 'dev',
     PORT: 10071,
-    // BASE_URL: 'http://192.168.5.114:8087',
-    BASE_URL: 'http://154.209.69.121:8089',
+    BASE_URL: 'http://123.129.224.30:29999/api',
     WS_URL: 'http://192.168.5.118:8087/server',
-    LOCAL_URL: 'https://license.whitecoin.info',
   },
   qa: {
     MODE: 'qa',
     PORT: 10071,
-    BASE_URL: 'http://154.209.69.121:8089',
+    BASE_URL: 'http://123.129.224.30:29999/api',
     WS_URL: 'http://192.168.5.118:8087/server',
-    LOCAL_URL: 'https://license.whitecoin.info',
   },
   prod: {
     MODE: 'prod',
     PORT: 10071,
     BASE_URL: 'http://cms-api.tokenswap.info',
     WS_URL: 'http://192.168.5.118:8087/server',
-    LOCAL_URL: 'https://license.whitecoin.info',
   },
 }

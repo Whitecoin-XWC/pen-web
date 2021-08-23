@@ -12,7 +12,6 @@ export default function ({ app, redirect, store }) {
         headers: {
           ...headers,
           'Content-Type': 'application/json;charset=UTF-8',
-          token: app.$cookies.get('_token') || '',
         },
       }
     },

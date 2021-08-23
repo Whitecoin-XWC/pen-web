@@ -5,27 +5,31 @@
       <el-input v-model="inputValue" type="text" placeholder="Enter XWC address"></el-input>
       <el-button :disabled="inputValue === '' ? true : false" @click="searchHiddle">Search</el-button>
     </div>
-    <el-dialog :visible.sync="dialogVisible" width="30%" :before-close="handleClose">
+    <el-dialog v-if="queryData !== null" :visible.sync="dialogVisible" width="30%" :before-close="handleClose">
       <div class="title">Claim Earnings</div>
-      <div class="content">To be claimed：{{ claimed }} PEN</div>
-      <el-button :disabled="claimed === 0 ? true : false" type="primary" @click="dialogVisible = false">Claim</el-button>
+      <div class="content">To be claimed：{{ queryData }} PEN</div>
+      <el-button :disabled="queryData === null || Number(queryData) === 0 ? true : false" type="primary" @click="fetchHiddle">Claim</el-button>
     </el-dialog>
   </div>
 </template>
 
 <script>
+import { mapState } from 'vuex'
 export default {
   data() {
     return {
       inputValue: '',
       dialogVisible: false,
-      claimed: 0,
     }
+  },
+  computed: {
+    ...mapState('home', ['queryData']),
   },
   methods: {
     searchHiddle() {
       const reg = /^XWC[A-Za-z0-9]{34}$/
       if (reg.test(this.inputValue)) {
+        this.$store.dispatch('home/get_queryAddr', this.inputValue)
         this.dialogVisible = true
       } else {
         this.$message({
@@ -37,6 +41,19 @@ export default {
     },
     handleClose() {
       this.dialogVisible = false
+    },
+    fetchHiddle() {
+      this.$store.dispatch('home/get_fetchAddr', this.inputValue).then((res) => {
+        if (res.code === 1) {
+          this.$message({
+            showClose: true,
+            message: 'Successs',
+            type: 'success',
+          })
+          this.dialogVisible = false
+          this.inputValue = ''
+        }
+      })
     },
   },
 }

@@ -8,6 +8,6 @@ export default function ({ app, store, redirect }) {
   } else {
     locale = app.i18n.fallbackLocale
   }
-  store.commit('global/set_locale', locale)
+  store.commit('home/set_locale', locale)
   app.i18n.locale = locale
 }
