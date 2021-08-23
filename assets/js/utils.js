@@ -1,4 +1,6 @@
 /* eslint-disable no-unused-expressions */
+import * as calc from '@lzwme/asmd-calc'
+
 const util = {
   toNonExponential(num) {
     const m = num.toExponential().match(/\d(?:\.(\d*))?e([+-]\d+)/)
@@ -106,17 +108,20 @@ const util = {
       return false
     }
   },
-  divisionHiddle(balance, precision) {
-    return (balance / precision).toString().replace(/^(.*\..{8}).*$/, '$1')
-  },
-  multiplicationHiddle(balance, precision) {
-    return (balance * precision).toString().replace(/^(.*\..{8}).*$/, '$1')
-  },
   fluidityRateHiddle(item) {
     return item.toString().replace(/^(.*\..{2}).*$/, '$1')
   },
-  precisionNmber() {
-    return 100000000
+  accAdd(arg1, arg2) {
+    return calc.toNonExponential(calc.add(arg1, arg2))
+  },
+  accSub(arg1, arg2) {
+    return calc.toNonExponential(calc.sub(arg1, arg2))
+  },
+  accMul(arg1, arg2) {
+    return calc.toNonExponential(calc.mul(arg1, arg2))
+  },
+  accDiv(arg1, arg2) {
+    return calc.toNonExponential(calc.div(arg1, arg2))
   },
 }
 

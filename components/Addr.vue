@@ -7,7 +7,7 @@
     </div>
     <el-dialog v-if="queryData !== null" :visible.sync="dialogVisible" width="30%" :before-close="handleClose">
       <div class="title">Claim Earnings</div>
-      <div class="content">To be claimed：{{ queryData }} PEN</div>
+      <div class="content">To be claimed：{{ $utils.accDiv(queryData, 100000000) }} PEN</div>
       <el-button :disabled="queryData === null || Number(queryData) === 0 ? true : false" type="primary" @click="fetchHiddle">Claim</el-button>
     </el-dialog>
   </div>
