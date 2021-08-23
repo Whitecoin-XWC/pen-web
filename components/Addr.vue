@@ -5,10 +5,10 @@
       <el-input v-model="inputValue" type="text" placeholder="Enter XWC address"></el-input>
       <el-button :disabled="inputValue === '' ? true : false" @click="searchHiddle">Search</el-button>
     </div>
-    <el-dialog v-if="queryData !== null" :visible.sync="dialogVisible" width="30%" :before-close="handleClose">
+    <el-dialog v-if="queryData !== null" :visible.sync="dialogVisible" width="30%" top="40vh" :before-close="handleClose">
       <div class="title">Claim Earnings</div>
       <div class="content">To be claimed：{{ $utils.accDiv(queryData, 100000000) }} PEN</div>
-      <el-button :disabled="queryData === null || Number(queryData) === 0 ? true : false" type="primary" @click="fetchHiddle">Claim</el-button>
+      <el-button :disabled="queryData === null || Number(queryData) <= 0 ? true : false" type="primary" @click="fetchHiddle">Claim</el-button>
     </el-dialog>
   </div>
 </template>
@@ -84,7 +84,7 @@ export default {
         background: transparent;
         border: 1px solid #464d59;
         border-radius: 6px;
-        color: #938c69;
+        color: #464d59;
         font-size: 14px;
         &::placeholder {
           color: #938c69;
@@ -95,10 +95,10 @@ export default {
       background: transparent;
       border: 1px solid #464d59;
       border-radius: 6px;
-      color: #938c69;
+      color: #464d59;
       font-size: 14px;
       &.is-disabled {
-        background: #464d59;
+        color: #938c69;
       }
     }
   }
