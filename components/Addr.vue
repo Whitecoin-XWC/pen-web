@@ -121,6 +121,8 @@ export default {
     }
   }
   /deep/ .el-button--primary {
+    background-color: #5f5fff;
+    border-color: #5f5fff;
     &.is-disabled {
       background: #464d59;
       border: 1px solid #464d59;
