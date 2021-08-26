@@ -1,5 +1,5 @@
 test：http://154.209.69.121:806  ||  test.penguin.top
-onLine ：www.penguin.top
+online：www.penguin.top
 
 # NuxtTP
 
