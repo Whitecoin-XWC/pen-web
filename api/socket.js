@@ -1,6 +1,6 @@
 export default (socket) => {
   return {
-    /** 订阅首页消息 */
+    /** Subscribe to homepage news */
     subscribe_homepageInfo: (callback) => {
       return socket.subscribe('/topic/homepageInfo', (msg) => {
         if (msg.body) {

@@ -5,8 +5,8 @@ import Stomp from 'stompjs'
 const sockJS = new SockJS(process.env.WS_URL)
 const stompClient = Stomp.over(sockJS)
 const headers = {}
-stompClient.heartbeat.outgoing = 20000 // 发送心跳
-stompClient.heartbeat.incoming = 0 // 接受心跳
+stompClient.heartbeat.outgoing = 20000
+stompClient.heartbeat.incoming = 0
 
 stompClient.connect(
   headers,
@@ -35,7 +35,7 @@ export default function ({ store, redirect, app, req }) {
 //   },
 //   disconnect() {
 //     stompClient.disconnect(() => {
-//       console.log('socket-disconnect:', '断开连接')
+//       console.log('socket-disconnect:', 'Disconnect')
 //     })
 //   },
 //   send(url, msg) {

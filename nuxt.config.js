@@ -22,13 +22,11 @@ export default {
   },
 
   css: [
-    // 全局样式
     // { src: 'element-ui/lib/theme-chalk/index.css' },
     { src: '~/assets/css/main.scss', lang: 'scss' },
   ],
 
   plugins: [
-    // 第三方插件
     { src: '~/plugins/axios' },
     { src: '~/plugins/element-ui' },
     { src: '~/plugins/i18n' },
@@ -38,11 +36,7 @@ export default {
   ],
 
   router: {
-    middleware: [
-      // 中间件
-      'authentication',
-      'language',
-    ],
+    middleware: ['authentication', 'language'],
   },
 
   env: {

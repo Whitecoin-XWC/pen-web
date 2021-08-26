@@ -326,64 +326,64 @@ var NodeClient = function () {
         return this.apiInstance.db_api().exec("get_dynamic_global_properties", []);
     };
 
-    // 查询资产列表
+    // Query asset list
 
 
     NodeClient.prototype.listAssets = function listAssets(lower_bound_symbol, limit) {
         return this.apiInstance.db_api().exec("list_assets", [lower_bound_symbol, limit]);
     };
 
-    // 查询地址的资产余额
+    // Check the asset balance of the address
 
 
     NodeClient.prototype.getAddrBalances = function getAddrBalances(address) {
         return this.apiInstance.db_api().exec("get_addr_balances", [address]);
     };
 
-    // 查询合约的资产余额
+    // Query the asset balance of the contract
 
 
-    // 查询质押收益
+    // Query pledge income
     NodeClient.prototype.getAddressPayBackBalance = function getAddressPayBackBalance(address) {
         return this.apiInstance.db_api().exec("get_address_pay_back_balance", [address, "XWC"]);
     };
 
-    // 查询miner列表
+    // Query the miner list
 
 
     NodeClient.prototype.listMiners = function listMiners(prefix, limit) {
         return this.apiInstance.db_api().exec("lookup_miner_accounts", [prefix, limit]);
     };
 
-    // 查询miners数量
+    // Query the number of miners
 
 
     NodeClient.prototype.getMinersCount = function getMinersCount() {
         return this.apiInstance.db_api().exec("get_miner_count", []);
     };
 
-    // 查询miner信息
+    // Query miner information
 
 
     NodeClient.prototype.getMiner = function getMiner(minerIdOrAccountName) {
         return this.apiInstance.db_api().exec("get_miner", [minerIdOrAccountName]);
     };
 
-    // 查询account信息
+    // Query account information
 
 
     NodeClient.prototype.getAccount = function getAccount(accountId) {
         return this.apiInstance.db_api().exec("get_account", [accountId]);
     };
 
-    // 根据账户名查询账户信息
+    // Query account information based on account name
 
 
     NodeClient.prototype.getAccountByName = function getAccountByName(accountName) {
         return this.apiInstance.db_api().exec("get_account_by_name", [accountName]);
     };
 
-    // 根据账户查询地址信息
+    // Query address information based on account
 
 
     NodeClient.prototype.getAccountByAddresss = function getAccountByAddresss(address) {
@@ -392,35 +392,35 @@ var NodeClient = function () {
         });
     };
 
-    // 获取合约信息
+    // Get contract information
 
 
     NodeClient.prototype.getContractInfo = function getContractInfo(contractAddr) {
         return this.apiInstance.db_api().exec("get_contract_info", [contractAddr]);
     };
 
-    // 获取合约除字节码外的信息
+    // Get contract information except bytecode
 
 
     NodeClient.prototype.getSimpleContractInfo = function getSimpleContractInfo(contractAddr) {
         return this.apiInstance.db_api().exec("get_simple_contract_info", [contractAddr]);
     };
 
-    // 获取合约交易的receipt
+    // Get the receipt of the contract transaction
 
 
     NodeClient.prototype.getContractTxReceipt = function getContractTxReceipt(txid) {
         return this.apiInstance.db_api().exec("get_contract_invoke_object", [txid]);
     };
 
-    // 根据交易id查找交易
+    // Find transaction based on transaction id
 
 
     NodeClient.prototype.getTransactionById = function getTransactionById(txid) {
         return this.apiInstance.db_api().exec("get_transaction_by_id", [txid]);
     };
 
-    // 查询账户的质押信息
+    // Query the pledge information of the account
 
 
     NodeClient.prototype.getAccountLockBalances = function getAccountLockBalances(accountName) {
