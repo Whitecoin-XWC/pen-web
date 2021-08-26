@@ -1,5 +1,5 @@
-测试访问地址：http://154.209.69.121:806  ||  test.penguin.top
-正式访问地址：www.penguin.top
+test：http://154.209.69.121:806  ||  test.penguin.top
+onLine：www.penguin.top
 
 # NuxtTP
 
