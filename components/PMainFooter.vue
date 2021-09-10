@@ -9,16 +9,16 @@
         <div class="right_con">
           <li>
             <p>Website navigation</p>
-            <p>Storage</p>
-            <p>Mine</p>
+            <p @click="toolsHiddle">Tools</p>
+            <!-- <p>Mine</p>
             <p>Develop</p>
-            <p>Blog</p>
+            <p>Blog</p> -->
           </li>
-          <li>
+          <!-- <li>
             <p>File</p>
             <p>FAQ</p>
             <p>Audit report</p>
-          </li>
+          </li> -->
           <li>
             <p>About us</p>
             <p><router-link to="/about">Team Introduction</router-link></p>
@@ -43,6 +43,9 @@ export default {
   methods: {
     homeUrl() {
       this.$router.push('/home')
+    },
+    toolsHiddle() {
+      window.open(process.env.TOOLS_URL)
     },
   },
 }
@@ -81,7 +84,7 @@ export default {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      width: 60%;
+      width: 50%;
       .right_con {
         display: flex;
         justify-content: space-between;

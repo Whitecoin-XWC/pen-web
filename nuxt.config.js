@@ -22,26 +22,25 @@ export default {
   },
 
   css: [
-    // 全局样式
     // { src: 'element-ui/lib/theme-chalk/index.css' },
     { src: '~/assets/css/main.scss', lang: 'scss' },
   ],
 
   plugins: [
-    // 第三方插件
     { src: '~/plugins/axios' },
     { src: '~/plugins/element-ui' },
     { src: '~/plugins/i18n' },
     // { src: '~/plugins/sockjs' },
     { src: '~/plugins/utils' },
     { src: '~/plugins/wallet', ssr: false },
+    { src: '~/plugins/current-device', ssr: false },
   ],
 
   router: {
     middleware: [
-      // 中间件
       'authentication',
       'language',
+      'platform',
     ],
   },
 
@@ -49,6 +48,7 @@ export default {
     MODE: env[process.env.MODE].MODE,
     WS_URL: env[process.env.MODE].WS_URL,
     BASE_URL: env[process.env.MODE].BASE_URL,
+    TOOLS_URL: env[process.env.MODE].TOOLS_URL,
   },
 
   server: {
@@ -77,5 +77,29 @@ export default {
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
     transpile: [/^element-ui/],
+    postcss: {
+      plugins: {
+        'postcss-px-to-viewport': {
+          unitToConvert: 'rem',
+          viewportWidth: 375,
+          // viewportHeight: 667,
+          unitPrecision: 3,
+          propList: ['*'],
+          viewportUnit: 'vw',
+          fontViewportUnit: 'vw',
+          selectorBlaskList: ['.ignore-'],
+          mediaQuery: false,
+          // minPixelValue: 1,
+          replace: true,
+          exclude: [],
+          landscape: false,
+          landscapeUnit: 'vw',
+          landscapeWidth: 1134,
+        },
+      },
+      preset: {
+        autoprefixer: {},
+      },
+    },
   },
 }

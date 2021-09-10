@@ -3,13 +3,19 @@
     <div class="nav_all">
       <div class="logo" @click="homeUrl"></div>
       <div class="nav_right">
-        <li><router-link to="/home" :class="$route.name === 'home' ? 'active' : ''">HOME</router-link></li>
-        <li><router-link to="">Storage</router-link></li>
-        <li><router-link to="">Mine</router-link></li>
+        <li>
+          <router-link to="/pc/home" :class="$route.name === 'pc-home' ? 'active' : ''">{{ $t('HOME') }}</router-link>
+        </li>
+        <li @click="toolsHiddle">
+          <a>{{ $t('Tools') }}</a>
+        </li>
+        <!-- <li><router-link to="">Mine</router-link></li>
         <li><router-link to="">Develop</router-link></li>
         <li><router-link to="">Blog</router-link></li>
-        <li><router-link to="">FAQ</router-link></li>
-        <li><router-link to="/about" :class="$route.name === 'about' ? 'active' : ''">About</router-link></li>
+        <li><router-link to="">FAQ</router-link></li> -->
+        <li>
+          <router-link to="/pc/about" :class="$route.name === 'pc-about' ? 'active' : ''">{{ $t('About') }}</router-link>
+        </li>
         <li><router-link to="">English</router-link></li>
       </div>
     </div>
@@ -21,6 +27,9 @@ export default {
   methods: {
     homeUrl() {
       this.$router.push('/home')
+    },
+    toolsHiddle() {
+      window.open(process.env.TOOLS_URL)
     },
   },
 }

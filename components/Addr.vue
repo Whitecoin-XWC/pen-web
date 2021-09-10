@@ -1,11 +1,11 @@
 <template>
-  <div class="addr">
+  <div :class="['addr', !desktop ? 'mobile' : '']">
     <div class="addr_title">Claim Earnings</div>
     <div class="addr_input">
       <el-input v-model="inputValue" type="text" placeholder="Enter XWC address"></el-input>
       <el-button :disabled="inputValue === '' ? true : false" @click="searchHiddle">Search</el-button>
     </div>
-    <el-dialog v-if="queryData !== null" :visible.sync="dialogVisible" width="30%" top="40vh" :before-close="handleClose">
+    <el-dialog v-if="queryData !== null" :visible.sync="dialogVisible" :width="desktop ? '30%' : '90%'" top="40vh" :before-close="handleClose">
       <div class="title">Claim Earnings</div>
       <div class="content">To be claimed：{{ $utils.fluidityRateHiddle($utils.accDiv(queryData, 100000000)) }} PEN</div>
       <el-button :disabled="queryData === null || Number(queryData) <= 0 ? true : false" type="primary" @click="fetchHiddle">Claim</el-button>
@@ -20,10 +20,14 @@ export default {
     return {
       inputValue: '',
       dialogVisible: false,
+      desktop: null,
     }
   },
   computed: {
     ...mapState('home', ['queryData']),
+  },
+  mounted() {
+    this.desktop = this.$device.desktop()
   },
   methods: {
     searchHiddle() {
@@ -126,6 +130,28 @@ export default {
     &.is-disabled {
       background: #464d59;
       border: 1px solid #464d59;
+    }
+  }
+  &.mobile {
+    height: 219rem;
+    .addr_input {
+      flex-direction: column;
+      margin-top: 20rem;
+      .el-input {
+        margin-bottom: 20rem;
+        width: 285rem;
+        margin-right: 0;
+        font-size: 14rem;
+      }
+    }
+    .el-dialog__body {
+      .title {
+        font-size: 18rem;
+      }
+      .content {
+        font-size: 14rem;
+        margin: 25rem 1px;
+      }
     }
   }
 }

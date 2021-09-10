@@ -3,7 +3,7 @@ import { Message } from 'element-ui'
 export default function ({ app, redirect, store }) {
   // app.$axios.defaults.withCredentials = true
   // app.$axios.defaults.baseURL = process.env.baseUrl
-  // 请求拦截
+  // Request interception
   app.$axios.interceptors.request.use(
     (request) => {
       const { headers = {} } = request
@@ -19,7 +19,7 @@ export default function ({ app, redirect, store }) {
       return Promise.reject(error)
     },
   )
-  // 响应拦截
+  // Response interception
   app.$axios.interceptors.response.use(
     (response) => {
       if (response.status === 200) {

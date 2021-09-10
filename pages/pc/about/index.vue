@@ -3,8 +3,8 @@
     <div class="about_banner">
       <div class="banner_ul">
         <div class="banner_text">
-          <p>About Us</p>
-          <p>Be a pioneer of blockchain technology innovation</p>
+          <p>{{ $t('About') }}</p>
+          <p>{{ $t('Be a pioneer of blockchain technology innovation') }}</p>
         </div>
         <div class="banner_img"></div>
       </div>
@@ -14,34 +14,31 @@
         <div class="name_li">
           <div class="name_img name01"></div>
           <div class="name_text left">
-            <p>Danil Chunyukin</p>
-            <p>CEO</p>
+            <p>{{ $t('about name01 title') }}</p>
+            <p>{{ $t('about name01 name') }}</p>
             <p>
-              Over ten years of management and four years of crypto and blockchain spheres experience.<br />
-              Used to be the Chief Project Manager of UNISLURM.<br />
-              Managing the blockchain/cryptocurrency products and related services, solutions for mobile and desktop: decentralized exchanges, cryptocurrency
-              wallets, payment gateways. Extensive experience in international cooperation.
+              {{ $t('about name01 content01') }}<br />
+              {{ $t('about name01 content02') }}<br />
+              {{ $t('about name01 content03') }}<br />
             </p>
           </div>
         </div>
         <div class="name_li flex">
           <div class="name_img name02"></div>
           <div class="name_text right">
-            <p>Aleksandr Aleksandruk</p>
-            <p>CTO</p>
+            <p>{{ $t('about name02 title') }}</p>
+            <p>{{ $t('about name02 name') }}</p>
             <p>
-              CTO in Penguin storage project ,technical consultant in Whitecoin project Used to launch 3 successful projects such as crypto acquiring in Fintech
-              and Blockchain at the venture fund.<br />
-              Also ,used to build a powerful cryptocurrency exchange market platform with additional narrowly niche products such as liquidity finance bots and
-              connectors to the 3rd-party popular services at Starup Cryptocurrency Exchange market.
+              {{ $t('about name02 content01') }}<br />
+              {{ $t('about name02 content02') }}
             </p>
           </div>
         </div>
       </div>
     </div>
     <div class="radmap">
-      <div class="radmap_title">Penguin Roadmap</div>
-      <div class="radmap_img"><img src="../../assets/img/about/roadmap.png" alt="" width="100%" /></div>
+      <div class="radmap_title">{{ $t('Penguin Roadmap') }}</div>
+      <div class="radmap_img"><img src="@/assets/img/about/roadmap.png" alt="" width="100%" /></div>
     </div>
   </div>
 </template>
@@ -76,13 +73,13 @@ export default {}
       .banner_img {
         width: 662px;
         height: 342px;
-        background: url(../../assets/img/about/about_banner.png) no-repeat;
+        background: url(@/assets/img/about/about_banner.png) no-repeat;
         background-size: cover;
       }
     }
   }
   .about_name {
-    background: url(../../assets/img/about/about_name.png) repeat-x;
+    background: url(@/assets/img/about/about_name.png) repeat-x;
     background-size: cover;
     .name_con {
       width: 1200px;
@@ -96,11 +93,11 @@ export default {}
           width: 200px;
           height: 196px;
           &.name01 {
-            background: url(../../assets/img/about/name01.png) no-repeat;
+            background: url(@/assets/img/about/name01.png) no-repeat;
             background-size: cover;
           }
           &.name02 {
-            background: url(../../assets/img/about/name02.png) no-repeat;
+            background: url(@/assets/img/about/name02.png) no-repeat;
             background-size: cover;
           }
         }

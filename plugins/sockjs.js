@@ -5,8 +5,8 @@ import Stomp from 'stompjs'
 const sockJS = new SockJS(process.env.WS_URL)
 const stompClient = Stomp.over(sockJS)
 const headers = {}
-stompClient.heartbeat.outgoing = 20000 // 发送心跳
-stompClient.heartbeat.incoming = 0 // 接受心跳
+stompClient.heartbeat.outgoing = 20000 // Send heartbeat
+stompClient.heartbeat.incoming = 0 // Accept the heartbeat
 
 stompClient.connect(
   headers,

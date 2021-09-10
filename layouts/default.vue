@@ -1,22 +1,34 @@
 <template>
   <div>
-    <MainHeader />
-    <Nuxt />
-    <MainFooter />
+    <div v-if="isShow">
+      <PMainHeader />
+      <Nuxt />
+      <PMainFooter />
+    </div>
+    <div v-else>
+      <MMainHeader />
+      <Nuxt class="main" />
+      <MMainFooter />
+    </div>
   </div>
 </template>
 
 <script>
 export default {
-  props: {},
-  mounted() {},
+  data() {
+    return {
+      isShow: null,
+    }
+  },
+  mounted() {
+    this.isShow = this.$device.desktop()
+  },
   methods: {},
 }
 </script>
 
 <style scoped lang="scss">
 .main {
-  margin: 0;
-  padding: 0;
+  margin-top: 60rem;
 }
 </style>

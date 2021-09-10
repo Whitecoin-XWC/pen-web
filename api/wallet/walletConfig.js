@@ -1,5 +1,4 @@
 class ContractAddress {
-  // NFT合约
   static NFTAddress() {
     if (process.env.MODE === 'prod') {
       return ''
@@ -8,7 +7,6 @@ class ContractAddress {
     }
   }
 
-  // 拍卖合约
   static AuctionAddress() {
     if (process.env.MODE === 'prod') {
       return ''
@@ -17,7 +15,6 @@ class ContractAddress {
     }
   }
 
-  // 售卖合约
   static SaleAddress() {
     if (process.env.MODE === 'prod') {
       return ''

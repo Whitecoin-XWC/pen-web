@@ -1,41 +1,34 @@
 <template>
   <div class="content_all">
-    <div class="banner"><img src="../../assets/img/home/banner.png" alt="" /></div>
+    <div class="banner"><img src="@/assets/img/home/banner.png" alt="" /></div>
     <Addr />
     <div class="home_about">
       <div class="homea_con">
         <div class="homea_left">
-          <p>Penguin Introduction</p>
-          <p>
-            Penguin is a p2p decentralized storage network established on Whitecoin, which allows pool storage, bandwidth and hashrate resources to support its
-            application. The system uses both distributed storage market and retrieval market to hire miners, and it can help DApp with its storage and code
-            allocation, and data and content to release isolated data, without disturbing data on chain. The innovative stimulation system with built-in
-            micropayments and smart contract construct a reliable reputation mechanism, leading fast and reliable data provision, routing around censorship and
-            giving permanence to digital information. The survived network partitions and zero downtime situated in offline work shall resist periodical
-            breakdowns.
-          </p>
+          <p>{{ $t('Introduction') }}</p>
+          <p>{{ $t('Introduction content') }}</p>
         </div>
         <div class="homea_right"></div>
       </div>
     </div>
     <div class="why_stake">
-      <div class="why_title">Why stake with Penguin</div>
+      <div class="why_title">{{ $t('Why stake with Penguin') }}</div>
       <div class="why_con">
         <div class="why_li">
           <div class="icon one"></div>
-          <div class="text">Competitive price</div>
+          <div class="text">{{ $t('Competitive price') }}</div>
         </div>
         <div class="why_li">
           <div class="icon two"></div>
-          <div class="text">Security and Authenticity</div>
+          <div class="text">{{ $t('Security and Authenticity') }}</div>
         </div>
         <div class="why_li">
           <div class="icon three"></div>
-          <div class="text">High Efficiency</div>
+          <div class="text">{{ $t('High Efficiency') }}</div>
         </div>
         <div class="why_li">
           <div class="icon four"></div>
-          <div class="text">Reliability</div>
+          <div class="text">{{ $t('Reliability') }}</div>
         </div>
       </div>
     </div>
@@ -90,7 +83,7 @@ export default {
       .homea_right {
         width: 412px;
         height: 390px;
-        background: url(../../assets/img/home/about_right.png) no-repeat;
+        background: url(@/assets/img/home/about_right.png) no-repeat;
         background-size: cover;
       }
     }
@@ -120,19 +113,19 @@ export default {
           height: 63px;
           margin-bottom: 15px;
           &.one {
-            background: url(../../assets/img/home/one.png) no-repeat;
+            background: url(@/assets/img/home/one.png) no-repeat;
             background-size: cover;
           }
           &.two {
-            background: url(../../assets/img/home/two.png) no-repeat;
+            background: url(@/assets/img/home/two.png) no-repeat;
             background-size: cover;
           }
           &.three {
-            background: url(../../assets/img/home/three.png) no-repeat;
+            background: url(@/assets/img/home/three.png) no-repeat;
             background-size: cover;
           }
           &.four {
-            background: url(../../assets/img/home/four.png) no-repeat;
+            background: url(@/assets/img/home/four.png) no-repeat;
             background-size: cover;
           }
         }

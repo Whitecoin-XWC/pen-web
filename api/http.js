@@ -1,10 +1,10 @@
 export default (axios) => {
   return {
-    // 查询xwc合约地址
+    // Query xwc contract address
     queryAddr: (params) => {
       return axios.get(`${process.env.BASE_URL}/node-balance/query/${params}`)
     },
-    // 查询xwc合约地址
+    // Query xwc contract address
     fetchAddr: (params) => {
       return axios.get(`${process.env.BASE_URL}/node-balance/fetch/${params}`)
     },
